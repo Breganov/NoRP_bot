@@ -9,7 +9,7 @@ import telebot
 token = '871642712:AAHyhf9X3FleO9t2g-CEuuFb_3Jq9b7q8Ps'
 channel_id = '-1001362117188'
 bot = telebot.TeleBot(token)
-TeleBot.apihelper.proxy = {'https':'https://88.204.154.155:8080'}
+telebot.apihelper.proxy = {'https':'https://88.204.154.155:8080'}
 
 # инициализирую всё, что нужно для группы
 NORP_ID = "114070332"
