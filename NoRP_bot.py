@@ -2,9 +2,8 @@ import vk_api
 import json
 import time
 import requests
-from vk_api.longpoll import VkLongPoll, VkEventType
+from vk_api.longpoll import VkLongPoll
 import telebot
-from telebot.types import InputMediaPhoto
 from telebot import apihelper
 
 # инициализирую всё, что нужно для бота Телеграма
