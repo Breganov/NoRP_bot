@@ -1,0 +1,1 @@
+web: python NoRP_bot.py
