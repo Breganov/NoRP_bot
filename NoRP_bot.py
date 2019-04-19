@@ -4,12 +4,13 @@ import time
 import requests
 from vk_api.longpoll import VkLongPoll
 import telebot
+from telebot import apihelper
 
 # инициализирую всё, что нужно для бота Телеграма
 token = '871642712:AAHyhf9X3FleO9t2g-CEuuFb_3Jq9b7q8Ps'
 channel_id = '-1001362117188'
 bot = telebot.TeleBot(token)
-telebot.apihelper.proxy = {'https':'https://88.204.154.155:8080'}
+apihelper.proxy = {'https':'https://88.204.154.155:8080'}
 
 # инициализирую всё, что нужно для группы
 NORP_ID = "114070332"
@@ -59,3 +60,4 @@ while True:
     else:
         connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
     time.sleep(25)
+
