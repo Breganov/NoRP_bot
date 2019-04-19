@@ -4,6 +4,7 @@ import time
 import os
 import requests
 import telegram
+from telegram.ext import Updater
 from vk_api.longpoll import VkLongPoll
 
 # инициализирую всё, что нужно для бота Телеграма
