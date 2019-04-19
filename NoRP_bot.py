@@ -1,14 +1,20 @@
 import vk_api
 import json
 import time
-# import os
+import os
 import requests
 import telegram
 from vk_api.longpoll import VkLongPoll
 
 # инициализирую всё, что нужно для бота Телеграма
 token = '871642712:AAHyhf9X3FleO9t2g-CEuuFb_3Jq9b7q8Ps'
-# PORT = int(os.environ.get('PORT', '8443'))
+PORT = int(os.environ.get('PORT', '8443'))
+updater = Updater(token)
+updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=token)
+updater.bot.set_webhook("https://infinite-dusk-92685.herokuapp.com/" + token)
+updater.idle()
 channel_id = '-1001362117188'
 pp = telegram.utils.request.Request(proxy_url='https://88.204.154.155:8080')
 bot = telegram.Bot(token=token, request=pp)
