@@ -43,6 +43,8 @@ def LongPoll(group_id, key, ts):
 vk, longpoll = getapi(GROUP_TOKEN)
 connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
 
+Updater()
+
 bot.send_message("144635221", "VK API initialized.")
 bot.send_message("144635221", "Starting listening.")
 while True:
