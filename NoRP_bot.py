@@ -63,4 +63,4 @@ while True:
     else:
         bot.send_message('144635221','Ошибка: {}'.format(data))
         connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
-    time.sleep(25)
+    time.sleep(120)
