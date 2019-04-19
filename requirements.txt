@@ -5,9 +5,8 @@ idna==2.8
 requests==2.21.0
 six==1.12.0
 telebot==0.0.3
-urllib3==1.24.2
+urllib3==1.24.1
 vk-api==11.4.0
 pyTelegramBotAPI==3.6.6
 gunicorn==19.9.0
 PySocks==1.6.8
-urllib3==1.24.1
