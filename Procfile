@@ -1,1 +1,1 @@
-bot: python NoRP_bot.py
+web: python NoRP_bot.py
