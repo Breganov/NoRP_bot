@@ -1,1 +1,1 @@
-worker: python NoRP_bot.py
+bot: python NoRP_bot.py
