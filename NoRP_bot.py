@@ -26,9 +26,11 @@ def getapi(token):
 def LongPoll(group_id, key, ts):
     connection = vk.groups.getLongPollServer(group_id=group_id, key=key, ts=ts)
     return connection
-    
+
 vk, longpoll = getapi(GROUP_TOKEN)
 connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
+
+bot.send_message("144635221", "I've started working.")
 
 while True:
     data = requests.get('{}?act=a_check&key={}&ts={}&wait=25'.format(connection['server'], connection['key'], connection['ts'])).json()
