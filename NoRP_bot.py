@@ -4,11 +4,12 @@ import time
 import requests
 from vk_api.longpoll import VkLongPoll
 import telebot
+from telebot import apihelper
 
 token = '871642712:AAHyhf9X3FleO9t2g-CEuuFb_3Jq9b7q8Ps'
 channel_id = '-1001362117188'
 bot = telebot.TeleBot(token)
-telebot.apihelper.proxy = {'https':'https://88.204.154.155:8080'}
+apihelper.proxy = {'https':'https://88.204.154.155:8080'}
 
 NORP_ID = "114070332"
 # SERVICE_TOKEN = "705354bd705354bd705354bd2570395d1f77053705354bd2ce4708acd336b0c624d1868"
