@@ -10,3 +10,4 @@ vk-api==11.4.0
 pyTelegramBotAPI==3.6.6
 gunicorn==19.9.0
 PySocks==1.6.8
+python-telegram-bot==11.1.0
