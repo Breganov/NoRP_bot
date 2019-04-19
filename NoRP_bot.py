@@ -40,15 +40,16 @@ while True:
             for update in data['updates']:
                 if update['type'] == 'wall_post_new':
                     bot.send_message(channel_id, 'https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
+                    bot.send_message('144635221', 'Новый пост в NoRP: https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
 
-                # if update['type'] == 'wall_repost':
-                #     print('Репост: https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
+                if update['type'] == 'wall_repost':
+                    bot.send_message('144635221','Репост: https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
 
-                # if update['type'] == 'wall_reply_delete':
-                #     print('Удалил: https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
+                if update['type'] == 'wall_reply_delete':
+                    bot.send_message('144635221','Удалил: https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
 
-                # if update['type'] == 'wall_reply_new':
-                #     print('Новый комментарий: https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
+                if update['type'] == 'wall_reply_new':
+                    bot.send_message('144635221','Новый комментарий: https://vk.com/wall{}_{}'.format(update['object']['owner_id'], str(update['object']['id'])))
     
     else:
         connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
