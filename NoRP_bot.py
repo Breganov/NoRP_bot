@@ -31,8 +31,8 @@ connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
 
 while True:
     data = requests.get('{}?act=a_check&key={}&ts={}&wait=25'.format(connection['server'], connection['key'], connection['ts'])).json()
-    connection['ts'] = data['ts']
     if 'failed' not in data:
+        connection['ts'] = data['ts']
         if 'updates' in data:
             for update in data['updates']:
                 if update['type'] == 'wall_post_new':
