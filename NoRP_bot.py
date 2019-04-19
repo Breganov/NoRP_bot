@@ -9,16 +9,17 @@ from vk_api.longpoll import VkLongPoll
 
 # инициализирую всё, что нужно для бота Телеграма
 token = '871642712:AAHyhf9X3FleO9t2g-CEuuFb_3Jq9b7q8Ps'
-PORT = int(os.environ.get('PORT', '8443'))
+PORT = int(os.environ.get('PORT', '8080'))
 updater = Updater(token)
-updater.start_webhook(listen="0.0.0.0",
-                      port=PORT,
-                      url_path=token)
+updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=token)
 updater.bot.set_webhook("https://infinite-dusk-92685.herokuapp.com/" + token)
 updater.idle()
 channel_id = '-1001362117188'
 pp = telegram.utils.request.Request(proxy_url='https://88.204.154.155:8080')
 bot = telegram.Bot(token=token, request=pp)
+
+# initialized all Telegram Bot affilated
+bot.send_message("144635221", "NoRP Bot initialized.")
 
 # инициализирую всё, что нужно для группы
 NORP_ID = "114070332"
@@ -39,8 +40,8 @@ def LongPoll(group_id, key, ts):
 vk, longpoll = getapi(GROUP_TOKEN)
 connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
 
-bot.send_message("144635221", "I've started working.")
-
+bot.send_message("144635221", "VK API initialized.")
+bot.send_message("144635221", "Starting listening.")
 while True:
     data = requests.get('{}?act=a_check&key={}&ts={}&wait=25'.format(connection['server'], connection['key'], connection['ts'])).json()
     if 'failed' not in data:
@@ -63,4 +64,5 @@ while True:
     else:
         bot.send_message('144635221','Ошибка: {}'.format(data))
         connection = LongPoll(NORP_ID, connection['key'], connection['ts'])
-    time.sleep(120)
+    time.sleep(30)
+bot.send_message("144635221", "Something to listen.")
